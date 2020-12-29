@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 int main(){
-
   char n;
   char data[99]={0};
   int output[99]={0};
