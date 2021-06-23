@@ -1,29 +1,22 @@
-// @before-stub-for-debug-begin
-#include <vector>
-#include <string>
-#include "commoncppproblem704.h"
-
-using namespace std;
-// @before-stub-for-debug-end
-
 /*
- * @lc app=leetcode id=704 lang=cpp
+ * @lc app=leetcode id=34 lang=cpp
  *
- * [704] Binary Search
+ * [34] Find First and Last Position of Element in Sorted Array
  */
-d
+
 // @lc code=start
 class Solution {
 public:
-    int search(vector<int>& nums, int target) 
+    vector<int> searchRange(vector<int>& nums, int target) 
     {
         vector<int> array = nums;
+        vector<int> ans;
         int start = 0;
         int end = array.size()  -   1;
-        int len;
+
         while(start <= end)
         {
-            len = (start + end) / 2;
+            int len = (start + end) / 2;
                 
             if(array[len] > target)
             {
@@ -35,11 +28,15 @@ public:
             }
             else
             {
-                return len;
+                ans.push_back(start);
+                ans.push_back(end);
+                return ans;
             }
         }
 
-        return -1;
+        ans.push_back(-1);
+        ans.push_back(-1);
+        return ans;
     }
 };
 // @lc code=end
