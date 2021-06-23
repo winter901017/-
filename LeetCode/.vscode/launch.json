@@ -1,0 +1,77 @@
+{
+    // 使用 IntelliSense 以得知可用的屬性。
+    // 暫留以檢視現有屬性的描述。
+    // 如需詳細資訊，請瀏覽: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    {
+        "name": "(gdb) Windows 啟動上的 Bash",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "輸入程式名稱，例如 ${workspaceFolder}/a.exe",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${fileDirname}",
+        "environment": [],
+        "externalConsole": false,
+        "pipeTransport": {
+            "debuggerPath": "/usr/bin/gdb",
+            "pipeProgram": "${env:windir}\\system32\\bash.exe",
+            "pipeArgs": ["-c"],
+            "pipeCwd": ""
+        },
+        "setupCommands": [
+            {
+                "description": "啟用 gdb 的美化顯示",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ]
+    },
+        
+
+        {
+            "name": "(gdb) 連接",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "輸入程式名稱，例如 ${workspaceFolder}/a.exe",
+            "processId": "${command:pickProcess}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/path/to/gdb",
+            "setupCommands": [
+                {
+                    "description": "啟用 gdb 的美化顯示",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+    {
+        "name": "(Windows) 連接",
+        "type": "cppvsdbg",
+        "request": "attach",
+        "processId": "${command:pickProcess}"
+    },
+        {
+            "name": "cpp.exe - 建置及偵錯使用中的檔案",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "啟用 gdb 的美化顯示",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: cpp.exe 建置使用中檔案"
+        }
+    ]
+}
