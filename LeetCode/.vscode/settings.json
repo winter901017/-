@@ -6,7 +6,8 @@
         "type_traits": "cpp",
         "xutility": "cpp",
         "tuple": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "cstdlib": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
